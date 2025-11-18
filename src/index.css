@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f6e7d8;
+  color: #4a2b1b;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header{
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem;
+  background-color: #b44a2a;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.logo{
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav{
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-link{
+  text-decoration: none;
+  color: #ffe8dc;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+/* Main Section */
+.main{
+  flex: 1;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.main-title{
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #b44a2a;
+}
+
+.main-description{
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #4a2b1b;
+}
+
+/* Footer */
+.footer{
+  background-color: #b44a2a;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+  color: #ffe8dc;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #b44a2a;
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #8e3a21;
+  text-decoration: underline;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* CSS for Login Page*/
+.login-card{
+  max-width: 400px;
+  margin: 3rem auto;
+  background-color: #f6e7d8;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.login-title{
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #b44a2a;
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.border{
+  padding: 0.6rem 1rem;
+  border: 1px solid #b44a2a;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.border:focus {
+  outline: none;
+  border-color: #8e3a21;
+  box-shadow: 0 0 5px rgba(180, 75, 42, 0.5);
+}
+
+.submit-button{
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  background-color: #b44a2a;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.submit-button:hover{
+  background-color: #8e3a21;
+}
+
+@media (max-width: 768px) {
+  .header{
+    flex-direction: column;
+    gap: 0.5rem;
+    height: auto;
+    padding: 1rem 0;
+  }  
+  .main-title{
+    font-size: 2rem;
+  }
+  .main-description{
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px){
+  .nav{
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .main{
+    padding: 3rem 1rem;
+  }
+}
