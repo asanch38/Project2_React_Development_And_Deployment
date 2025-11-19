@@ -1,5 +1,7 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
 import "./../index.css";
 
 
@@ -7,16 +9,8 @@ export default function HomePage(){
     const navigate = useNavigate();
     return(
         <div className="container">
-            <header className="header">
-                <div className="logo"> 
-                    MyBlog
-                </div>
-                <nav className="nav">
-                    <button className="nav-link" onClick={() => navigate("/")}> Home</button>
-                    <button className="nav-link" onClick={() => navigate("/login")}>Login</button>
-                </nav>
-            </header>
-
+        {/* Call on Header method*/}
+            <Header />  
             <main className="main">
                 <h1 className="main-title">
                     Welcome to our Blog!
@@ -29,9 +23,8 @@ export default function HomePage(){
                 </p>
             </main>
 
-            <footer className="footer">
-                <p>2025 MyBlog. All rights reserved.</p>
-            </footer>
+        {/* Call on Footer method*/}
+            <Footer />
         </div>
     );
 }

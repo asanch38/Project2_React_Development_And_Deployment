@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import {useNavigate} from "react-router-dom";
-import "./../index.css";
 import { useAuth } from './authcontext';
+import "./../index.css";
+import Header from './Header';
+import Footer from './Footer';
 
 function Login(){
     const { login } = useAuth();
     const navigate = useNavigate();
+
     const [userData, setUserData] = useState({
         username: '',
         password: '',
@@ -13,17 +16,13 @@ function Login(){
     const onSubmit = (e) => {
         e.preventDefault();
         console.log(userData);
-        login(userData.username)
+        login(userData.username, userData.password)
+        navigate("/")
     };
     return (
-        <div className="container">
-            <header className="header">
-                <div className="logo">My Blog</div>
-                <nav className="nav">
-                    <button className="nav-link" onClick={() => navigate("/")}> Home</button>
-                    <button className="nav-link" onClick={() => navigate("/login")}>Login</button>
-                </nav>
-            </header>
+        <div>
+            {/* Import header function */}
+            <Header />
             
             <main className="main">
                 <div className="login-card">
@@ -50,9 +49,8 @@ function Login(){
                     </form>
                 </div>
             </main>
-            <footer className="footer">
-                <p>2025 MyBlog. All rights reserved.</p>
-            </footer>
+            {/* Call on Footer method*/}
+            <Footer />
         </div>
     );
 }
