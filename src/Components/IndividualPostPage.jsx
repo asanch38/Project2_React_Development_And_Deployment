@@ -3,9 +3,12 @@ import { useParams } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import CommentForm from "./CommentForm";
+import { useUsername } from "./LoginAuthentication/AuthContext";
+import { Link } from "react-router-dom";
 
 export default function IndividualPostPage() {
   const { id } = useParams();
+  const username = useUsername();
   const[post, setPost] = useState(null);
   const[user, setUser] = useState(null);
   const[comments, setComments] = useState([]);
@@ -54,12 +57,20 @@ export default function IndividualPostPage() {
             {user && <p className="individual-post-user">{user.name} ({user.email})</p>}
             <p className="individual-post-body">{post.body}</p>
 
-            <CommentForm 
-                postId={id}
-                onCommentAdded={(newComment) => 
-                    setComments((prev) => [newComment, ...prev])
-                }
+            {/* Conditional Rendering for comment form */}
+            {username ? (
+                <CommentForm 
+                    postId={id}
+                    defaultName={username}
+                    onCommentAdded={(newComment) =>
+                        setComments((prev) => [newComment, ...prev])
+                    }
                 />
+            ) : (
+                <Link to="/login" className="login-button">
+                    Log in to comment
+                </Link>
+            )}
 
             <div className="comment-box">
                 <h3>Comments</h3>
@@ -84,5 +95,5 @@ export default function IndividualPostPage() {
         {/* Call on Footer method*/}
         <Footer />
     </div>
-  )
+  );
 }

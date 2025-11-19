@@ -17,7 +17,7 @@ function Login(){
         e.preventDefault();
         console.log(userData);
         login(userData.username, userData.password);
-        navigate("/");
+        navigate("/posts");
     };
     return (
         <div>

@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./../index.css";
 
-export default function CommentForm({ postId, onCommentAdded}) {
-    const [name, setName] = useState("");
+export default function CommentForm({ postId, defaultName, onCommentAdded}) {
+    const [name, setName] = useState(defaultName || "");
     const [comment, setComment] = useState("");
     const [error, setError] = useState("");
+
+    useEffect(() => {
+        if (defaultName) setName(defaultName);
+    }, [defaultName]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -40,7 +44,6 @@ export default function CommentForm({ postId, onCommentAdded}) {
             id: data.id || Math.floor(Math.random() * 10000),
         };
         onCommentAdded(postedComment);
-        setName("");
         setComment("");
         setError("");
     })
@@ -53,16 +56,13 @@ export default function CommentForm({ postId, onCommentAdded}) {
         <div className="comment-form-box">
             <h3 className="comment-form-title">Leave a Comment</h3>
 
+            <p className="comment-username-display">
+                Commenting as: <strong>{name}</strong>
+            </p>
+
             {error && <p className="error-message">{error}</p>}
 
             <form onSubmit={handleSubmit} className="comment-form">
-                <input 
-                    type="text"
-                    placeholder="Your name"
-                    className="border-comment-input"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)} 
-                />
 
                 <textarea 
                     placeholder="Your comment"

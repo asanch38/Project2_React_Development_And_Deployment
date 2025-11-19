@@ -164,8 +164,8 @@ button:focus-visible {
 }
 
 .post-card{
-  background-color: #f7d9c1;
-  border: 1px solid #e2b9a3;
+  background-color: #d39a7b;
+  border: 1px solid #b77a61;
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
@@ -285,6 +285,24 @@ button:focus-visible {
   color: #b44a2a;
   margin-bottom: 1rem;
   font-weight: 500;
+}
+
+/* Styling for non-logged in log in button*/
+.login-button{
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #b44a2a;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid #8e3a21;
+}
+
+.login-button:hover{
+  background-color: #8e3a21;
 }
 
 @media (max-width: 768px) {
