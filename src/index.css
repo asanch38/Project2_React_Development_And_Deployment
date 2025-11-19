@@ -241,6 +241,52 @@ button:focus-visible {
   padding-bottom: 0.5rem;
 }
 
+/* Styling for Comment Form page*/
+.comment-form-box{
+  background-color: #f6e7d8;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+}
+
+.comment-form-title{
+  color: #b44a2a;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.comment-form input.border-comment-input,
+.comment-form textarea.border-comment-textarea{
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #b44a2a;
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.comment-form .submit-button{
+  background-color: #b44a2a;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.comment-form .submit-button:hover{
+  background-color: #8e3a21;
+}
+
+.error-message{
+  color: #b44a2a;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
 @media (max-width: 768px) {
   .header{
     flex-direction: column;

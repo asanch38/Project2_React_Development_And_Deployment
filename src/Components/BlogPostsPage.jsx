@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import "./../index.css";

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import CommentForm from "./CommentForm";
 
 export default function IndividualPostPage() {
   const { id } = useParams();
