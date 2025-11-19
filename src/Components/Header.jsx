@@ -13,6 +13,8 @@ function Header() {
 
             <nav className="nav">
                 <button className="nav-link" onClick={() => navigate("/")}> Home</button>
+                <button className="nav-link" onClick={() => navigate("/posts")}>Posts</button>
+
                 {/* Dynamic functionality for Login/Logout button */}
                 {username ? (<button className="nav-link" onClick={() => {logout(); navigate("/");}}>Logout</button>)
                  : (<button className="nav-link" onClick={() => navigate("/login")}>Login</button>)}

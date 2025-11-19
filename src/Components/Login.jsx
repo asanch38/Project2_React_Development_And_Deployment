@@ -16,8 +16,8 @@ function Login(){
     const onSubmit = (e) => {
         e.preventDefault();
         console.log(userData);
-        login(userData.username, userData.password)
-        navigate("/")
+        login(userData.username, userData.password);
+        navigate("/");
     };
     return (
         <div>
