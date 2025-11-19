@@ -21,6 +21,9 @@ export default function HomePage(){
                     Development! Here we developed this website using react, 
                     and utilizing our skills in HTML, CSS, and JavaScript.
                 </p>
+                <h3>
+                    Login to explore additional functionality!
+                </h3>
             </main>
 
         {/* Call on Footer method*/}
