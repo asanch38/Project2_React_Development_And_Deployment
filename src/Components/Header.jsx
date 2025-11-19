@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth, useUsername } from "./authcontext";
+import { useAuth, useUsername } from "./LoginAuthentication/AuthContext";
 
 function Header() {
     const navigate = useNavigate();

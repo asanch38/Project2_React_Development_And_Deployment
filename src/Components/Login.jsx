@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {useNavigate} from "react-router-dom";
-import { useAuth } from './authcontext';
+import { useAuth } from './LoginAuthentication/AuthContext';
 import "./../index.css";
 import Header from './Header';
 import Footer from './Footer';

@@ -1,5 +1,5 @@
 import React from "react";
-import AuthContext from "./authcontext";
+import AuthContext from "./AuthContext";
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = React.useState(null);
