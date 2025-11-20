@@ -13,8 +13,16 @@ function Login(){
         username: '',
         password: '',
     });
+
+    const [error, setError] = useState("");
+
     const onSubmit = (e) => {
         e.preventDefault();
+        if (!userData.username.trim() || !userData.password.trim()){
+            setError("Please enter a username and password");
+            return;
+        }
+        setError("");
         console.log(userData);
         login(userData.username, userData.password);
         navigate("/posts");
@@ -42,6 +50,11 @@ function Login(){
                         value={userData.password}
                         onChange={(e) => setUserData({...userData, password: e.target.value})}
                         />
+
+                        {/* Error message if fields are empty*/}
+                        {error && (
+                            <p>{error}</p>
+                        )}
 
                         <button type="submit" className="submit-button">
                             Submit
