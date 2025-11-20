@@ -28,7 +28,7 @@ function Login(){
         navigate("/posts");
     };
     return (
-        <div>
+        <div className="container">
             {/* Import header function */}
             <Header />
             
